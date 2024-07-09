@@ -21,7 +21,28 @@ const createUser = async(req, res, next) => {
         const err = new Error("Invalid email address")
         return next(err)
     }
-    res.send("ok")
+    
+    try {
+        const userExists =  await User.findOne({email})
+        if(userExists){
+            res.status(400)
+            const err = new Error("email is already registere. please use different");
+            return next(err);
+        }
+
+        const user = await User.create({
+            name,
+            email,
+            password
+        });
+
+        if(user){
+            res.send("created successfully");
+        }
+
+    } catch (error) {
+        res.status(500).json({error: error.message} || " Internal server error")
+    }
 };
 const login = async() => {};
 const logout = async() => {};
