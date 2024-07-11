@@ -1,9 +1,18 @@
 import jwt from 'jsonwebtoken'
 
 const generateToken = (res, userId) => {
-    const token = jwt.sign(userId.toJSON(), process.env.JWT_SECRET_KEY, {
-        expiresIn : "20h"
-    })
+
+    const payload = { 
+        userId: userId.toJSON()
+    };
+ 
+    const options = {
+        expiresIn: '1h' // Set expiration time to 1 hour
+    };
+
+    //const token = jwt.sign(payload, 'your-secret-key', options); // 
+
+    const token = jwt.sign(payload, process.env.JWT_SECRET_KEY, options)
 
     
 
