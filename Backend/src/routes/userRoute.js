@@ -8,6 +8,6 @@ router.post("/", createUser)
 router.post("/login", login)
 router.get("/profile", getProfile)
 router.put("/profile", updateProfile) /// update
-router.post("logout", logout)
+router.post("/logout", logout)
 
 export default router;
