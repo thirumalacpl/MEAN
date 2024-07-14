@@ -16,7 +16,18 @@ userSchema.pre('save', async function(next){
     // hash
     const salt = await bcrypt.genSalt(10)
     this.password = await bcrypt.hash(this.password, salt)
-  })
+})
+
+  // for login use instance method mongoose library
+    //   userSchema.method.greet = function(){
+        
+    //   }
+
+  //async 
+  userSchema.methods.checkPassword = async function(givenPassword){
+    return await bcrypt.compare(givenPassword, this.password)
+  }
+
 
   const User = mongoose.model("User", userSchema); // model name and schema
 
