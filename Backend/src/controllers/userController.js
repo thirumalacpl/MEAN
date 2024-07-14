@@ -30,7 +30,8 @@ const createUser = async(req, res, next) => {
         //     const err = new Error("email is already registere. please use different");
         //     return next(err);
         // }
-
+        // hash logic here or in user
+        console.log(User);
         const user = await User.create({
             name,
             email,
