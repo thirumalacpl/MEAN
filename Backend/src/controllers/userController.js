@@ -98,8 +98,40 @@ const login = asyncHandler(async (req, res) => {
     });
     res.status(200).json({ message: "Logged out.." });
   });
+
+const getProfile = asyncHandler(async (req, res) => {
+  const user = {
+    _id: req.user._id,
+    name: req.user.name,
+    email: req.user.email,
+  };
+  res.status(200).json(user);
+});
+
+const updateProfile = asyncHandler(async (req, res) => {
+    const { password } = req.body;
   
-const getProfile = async() => {};
-const updateProfile = async() => {};
+    if (password && password.length < 8) { //check for password if present
+      res.status(400); 
+      throw new Error("Password must be atleast 8 charecters");
+    }
+  
+    const user = await User.findById(req.user._id);
+    if (user) {
+      user.name = req.body.name || user.name;
+      if (password) {
+        user.password = password;
+      }
+      const updatedUser = await user.save();
+      res.status(200).json({
+        _id: updatedUser._id,
+        name: updatedUser.name,
+        email: updatedUser.email,
+      });
+    } else {
+      res.status(404);
+      throw new Error("User not found.");
+    }
+  });
 
 export {createUser, login, logout, getProfile, updateProfile};
