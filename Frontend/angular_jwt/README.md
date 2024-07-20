@@ -20,6 +20,18 @@ https://medium.com/@dgongoragamboa/how-to-create-an-angular-project-from-scratch
 6. app-routing.module.ts ---> config routes
 
 
+7. Installing NgRx and RxJS - https://medium.com/@nateogbonna/making-api-calls-efficiently-with-ngrx-and-rxjs-in-angular-50ce6f2c8267
+    npm install @ngrx/store @ngrx/effects rxjs
+if install error, use npm install @ngrx/store @ngrx/effects rxjs --legacy-peer-deps or install @ngrx/store @ngrx/effects rxjs --force
+
+
+
+
+
+
+
+
+
 
 
 

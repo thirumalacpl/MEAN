@@ -1,0 +1,37 @@
+//Angular frontend related
+
+jul-20-created frontend setup angular-16
+
+https://medium.com/@dgongoragamboa/how-to-create-an-angular-project-from-scratch-b4031abeb4de
+
+
+1. install cli globally
+    npm install -g @angular/cli
+    what specific version - npm install -g @angular/cli@16.0.0
+
+2. check cli version ----> ng version
+
+3. create new project ----> ng new angular_jwt
+
+4. start development server ---> ng serve
+
+5. create component ----> ng generate component component-name or ng g c component-name
+
+6. app-routing.module.ts ---> config routes
+
+
+7. Installing NgRx and RxJS - https://medium.com/@nateogbonna/making-api-calls-efficiently-with-ngrx-and-rxjs-in-angular-50ce6f2c8267
+    npm install @ngrx/store @ngrx/effects rxjs
+if install error, use npm install @ngrx/store @ngrx/effects rxjs --legacy-peer-deps or install @ngrx/store @ngrx/effects rxjs --force
+
+Difference b/w
+
+--legacy-peer-deps -------------> 	 ignores peer dependencies entirely, which can screw up your dependency resolution.
+
+--force command --------------- > 	force with many dependencies will increase your total space requirement a decent amount.
+
+ng serve vs npm start
+
+ng serve is used specifically for running an Angular project locally during development, providing a development server and automatic reloading. On the other hand, 
+
+`npm start` is a more generic command used in Node.js projects to execute a command specified in the `start` script, often used for starting an application in a production environment.
