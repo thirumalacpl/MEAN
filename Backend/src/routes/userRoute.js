@@ -5,7 +5,7 @@ import { checkToken } from "../middleware/authMiddleware.js";
 
 const router = express.Router()
 
-router.post("/", createUser)
+router.post("/", createUser) // - from userRouter.js file go to userController.js createUser method
 router.post("/login", login)
 router.get("/profile", checkToken, getProfile);
 router.put("/profile", checkToken, updateProfile);

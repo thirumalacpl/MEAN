@@ -34,7 +34,6 @@ const createUser = async(req, res, next) => {
         //     return next(err);
         // }
         // hash logic here or in user
-        console.log(User);
         const user = await User.create({
             name,
             email,

@@ -9,28 +9,13 @@ dotenv.config()
 connectDB();
 
 const PORT = 5000;
-
 const app = express() // creating one instance
-
 app.use(express.json())
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser());
 
-app.use("/api/users", userRoutes) // creat user
-
-
-// get method
-app.get("/", (req, res) => {
-    res.send("okay");
-
-})
-
-
-// custom error middle ware
-
-// app.get("/api", (req,res)=>{
-//     throw new Error("something went wrong"); // html error
-// })
+// router object - reused - mounted explicity using app.use()
+app.use("/api/users", userRoutes) // nesting route - userRoutes.js file - create, login, getProfile, updateProfile, logout.
 
 app.use(notFound)
 app.use(errorHandler)
