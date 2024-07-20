@@ -1,3 +1,38 @@
+//Angular frontend related
+
+jul-20-created frontend setup angular-16
+
+https://medium.com/@dgongoragamboa/how-to-create-an-angular-project-from-scratch-b4031abeb4de
+
+
+1. install cli globally
+    npm install -g @angular/cli
+    what specific version - npm install -g @angular/cli@16.0.0
+
+2. check cli version ----> ng version
+
+3. create new project ----> ng new angular_jwt
+
+4. start development server ---> ng serve
+
+5. create component ----> ng generate component component-name or ng g c component-name
+
+6. app-routing.module.ts ---> config routes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # AngularJwt
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
