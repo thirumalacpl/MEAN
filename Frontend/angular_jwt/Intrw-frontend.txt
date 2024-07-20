@@ -1,0 +1,125 @@
+//Angular frontend related
+
+jul-20-2024 ------> created frontend setup angular-16
+
+
+
+
+1. install cli globally -- create app from scratch link ----> https://medium.com/@dgongoragamboa/how-to-create-an-angular-project-from-scratch-b4031abeb4de
+    npm install -g @angular/cli
+    what specific version - npm install -g @angular/cli@16.0.0
+
+2. check angular cli version ----> ng version
+
+3. create new project ----> ng new <angular_jwt>(project name)
+
+4. start development server ---> ng serve (start angular application)
+
+5. create component ----> ng generate component component-name or ng g c component-name
+
+6. app-routing.module.ts ---> config routes
+
+
+7. Installing NgRx and RxJS - https://medium.com/@nateogbonna/making-api-calls-efficiently-with-ngrx-and-rxjs-in-angular-50ce6f2c8267
+    npm install @ngrx/store @ngrx/effects rxjs
+if install error, use npm install @ngrx/store @ngrx/effects rxjs --legacy-peer-deps or install @ngrx/store @ngrx/effects rxjs --force
+
+8. //Difference b/w --force  vs  --legacy-peer-deps
+
+--legacy-peer-deps -------------> 	 ignores peer dependencies entirely, which can screw up your dependency resolution.
+
+--force command --------------- > 	force with many dependencies will increase your total space requirement a decent amount.
+
+9. //Difference b/w ng serve vs npm start
+
+    ng serve --------->  is used specifically for running an Angular project locally during development, providing a development server and automatic reloading. On the other hand, 
+
+    `npm start` ------>  is a more generic command used in Node.js projects to execute a command specified in the `start` script, often used for starting an application in a production environment.
+
+10. angular folder structure - ---> https://dev.to/vixero/a-simple-angular-folder-structure-that-makes-development-feel-natural-and-easy-241d
+    App Module ------------>    The app module is the root module created by angular CLI, which is an entry point of the application. 
+        As the application starts, it loads the app module, which also loads all other modules. As the application grows, we evolve the root module. 
+        The app module contains all other modules: core, features, and shared.
+    Core Module ----------->    header, footer, navbar, sidebar, interceptors, loaders, search, guard, constants, enums, utils, and universal models.
+        Components (header, footer, navbar, error, etc.)
+        Logging service
+        Exception handling service
+        Configuration service
+        Localization service
+        Auth service
+        Http interceptors
+        Guards
+    Shared Module --------->    could be used across multiple features. Reused - component, directive, pipes. eusable UI components used throughout the application, such as buttons, form fields, and input validation. It may also include directives and pipes that are used by numerous modules.
+        |-- shared
+        |   |-- components
+        |   |   |-- spinner
+        |   |   |   |-- spinner.component.ts
+        |   |   |   |-- spinner.component.html
+        |   |   |   |-- spinner.component.scss
+        |   |   |-- modal
+        |   |   |   |-- modal.component.ts
+        |   |   |   |-- modal.component.html
+        |   |   |   |-- modal.component.scss
+        |   |-- directives
+        |   |   |-- highlight.directive.ts
+        |   |-- pipes
+        |   |   |-- capitalize.pipe.ts
+        |   |-- shared.module.ts
+        |   |-- third-party.module.ts
+    Features Module ------->    with a single responsibility focused on specific features. Eg appointments, prescriptions, patients, payments,
+    Each feature has its own module that contains a collection of components, services, directives, pipelines, and other code that encapsulate
+        |-- features
+        |   |-- products
+        |   |   |-- components
+        |   |   |   |-- product-list
+        |   |   |   |   |-- product-list.component.ts
+        |   |   |   |   |-- product-list.component.html
+        |   |   |   |   |-- product-list.component.scss
+        |   |   |   |-- product-details
+        |   |   |   |   |-- product-details.component.ts
+        |   |   |   |   |-- product-details.component.html
+        |   |   |   |   |-- product-details.component.scss
+        |   |   |-- product-root.component.html
+        |   |   |-- product-root.component.ts
+        |   |   |-- product-routing.module.ts
+        |   |   |-- product.module.ts
+    Apis folder -- consuming RESTful APIs or other web services. These files may include service classes, models or interfaces, and helper functions related to working with the APIs.
+        |-- apis
+        |   |-- product.service.ts
+    Types folder - he types folder is a location for storing type definitions that are used across the application.
+        |-- types
+        |   |-- user
+        |   |   |-- user.ts
+        |   |   |-- user-status.enum.ts
+        |   |-- product
+        |   |   |-- product.ts
+        |   |   |-- product-type.enum.ts
+    Store folder - If you're using NgRx for state management, the store folder is ideal for providing a centralized location for managing application state,
+
+        |-- store
+        |   |-- user
+        |   |   |-- actions
+        |   |   |   |-- user.actions.ts
+        |   |   |-- reducers
+        |   |   |   |-- user.reducers.ts
+        |   |   |-- selectors
+        |   |   |   |-- user.selectors.ts
+        |   |-- product
+        |   |   |-- actions
+        |   |   |   |-- product.actions.ts
+        |   |   |-- reducers
+        |   |   |   |-- product.reducers.ts
+        |   |   |-- selectors
+        |   |   |   |-- product.selectors.ts
+        |   |-- store.module.ts
+
+11. Shared module are render using lazy loading.
+
+
+12. angular.json vs package.json
+    angular.json    ------->    CLI configuration for all projects in the workspace, including configuration options for how to build, serve, and test each project.
+    package.json      -----> 	Configures npm package dependencies that are available to all projects in the workspace.
+    package-lock.json ----->    Provides version information for all packages installed into node_modules by the npm client.
+    tsconfig.json    ------>    The base TypeScript configuration for projects in the workspace. All other configuration files inherit from this base file. 
+
+13. public/ asset folder -------> Contains image and other asset files to be served as static files by the dev server and copied as-is when you build your application.
