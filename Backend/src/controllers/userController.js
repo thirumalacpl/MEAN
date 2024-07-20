@@ -41,7 +41,7 @@ const createUser = async(req, res, next) => {
         });
 
         if(user){
-            generateToken(res, user._id)
+            //generateToken(res, user._id)
             // 201 means some resource created
             res.status(201).json({
                 _id: user._id,
