@@ -1,19 +1,34 @@
 //Angular frontend related
 
-jul-20-2024 ------> created frontend setup angular-16
 
 
+20.) view encapsulation default emulated applied
 
+19.) change detection strategy - default -----------------> check more
+
+18.) wildcard is used of redirect to not found if entered unknown path
+    {path:'**', redirectTo: '/notfound}
+
+17.) if no wildcard route is configured. if we give unknown path it will render app component as default
+    
+
+16.) npm install bootstrap - next, add the bootstrap script inside the angular.json file inside the scripts and styles section
+    "styles": [
+    "src/styles.css",
+    "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    ],
+    "scripts": [
+    "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+    ]
 
 15.) Issue --->     'app-customer-add' is an Angular component, then verify that it is part of this module.
      Solution --->   exports: [CustomerAddComponent, CustomerListComponent], export components from shared module to avoid below issue
-
 
 14.) create new module commands
     ng generate module [module-name] --routing or ng g m [module-name] --routing
 
 
-
+July-21-2024
 
 1.) install cli globally -- create app from scratch link ----> https://medium.com/@dgongoragamboa/how-to-create-an-angular-project-from-scratch-b4031abeb4de
     npm install -g @angular/cli
@@ -60,7 +75,7 @@ jul-20-2024 ------> created frontend setup angular-16
 12.) public/ asset folder -------> Contains image and other asset files to be served as static files by the dev server and copied as-is when you build your application.
 
 
-
+jul-20-2024 ------> created frontend setup angular-16
 
 
 
