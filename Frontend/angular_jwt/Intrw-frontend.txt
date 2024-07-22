@@ -1,15 +1,37 @@
-//Angular frontend related
 
 
+
+22.) Template-driven vs Reactive Forms
+    A.) Template-driven
+        Template-driven forms make use of the "FormsModule",
+        Template-driven forms are asynchronous in nature
+        template-driven approach, most of the logic is driven from the template, 
+
+    B.) Reactive forms
+        reactive forms are based on "ReactiveFormsModule".
+        Reactive forms are mostly synchronous.
+        reactive-driven approach, the logic resides mainly in the component or typescript code
+
+21.) navigate to other component 
+    A.) By html:
+        <a routerLink="/customer/customer_add"><button class="btn btn-success pull-right" > Add Customer -> routerLink html </button></a>
+    B.)  By component.ts logic
+        import { Router } from '@angular/router';
+        constructor(private router: Router) { }
+        <button type="button" class="btn btn-primary-outline pull-right" (click)="btnClick();" style="margin-left: 10px;"><i class="fa fa-plus"></i> list customer -> navigateByUrl ts file</button>
+        btnClick=  () => {
+            this.router.navigateByUrl('/customer/customer_list');
+        };
+july-22
 
 20.) view encapsulation default emulated applied
 
 19.) change detection strategy - default -----------------> check more
 
-18.) wildcard is used of redirect to not found if entered unknown path
+18.) wildcard is used for redirect to not found if entered unknown path
     {path:'**', redirectTo: '/notfound}
 
-17.) if no wildcard route is configured. if we give unknown path it will render app component as default
+17.) If no wildcard route is configured. if we give unknown path it will render app component as default.
     
 
 16.) npm install bootstrap - next, add the bootstrap script inside the angular.json file inside the scripts and styles section
@@ -77,7 +99,7 @@ July-21-2024
 
 jul-20-2024 ------> created frontend setup angular-16
 
-
+//Angular frontend related Q&A
 
 
 

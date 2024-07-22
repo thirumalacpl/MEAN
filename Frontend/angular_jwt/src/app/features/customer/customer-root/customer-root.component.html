@@ -1,15 +1,15 @@
 
 
-Parent root module component html
-<p>customer-root module component has two 2 child components</p>
+<h1> root module parent component html</h1>
 
-
-
+<!-- <p>customer-root module component has two 2 child components</p> -->
+<!-- 
 child component html
 <app-customer-add></app-customer-add>
 
-<app-customer-list></app-customer-list>
+<app-customer-list></app-customer-list> -->
 
 
+<a routerLink="/customer/customer_add"><button class="btn btn-success pull-right" > Add Customer -> routerLink html </button></a>
 
-
+<button type="button" class="btn btn-primary-outline pull-right" (click)="btnClick();" style="margin-left: 10px;"><i class="fa fa-plus"></i> list customer -> navigateByUrl ts file</button> 

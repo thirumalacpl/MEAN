@@ -9,6 +9,14 @@ const routes: Routes = [
     path: 'customer',
     component: CustomerRootComponent,
     children: [{ path: 'customer-root', component: CustomerRootComponent }],
+  }, 
+  {
+    path: 'customer/customer_add',
+    component:CustomerAddComponent
+  },
+  {
+    path: 'customer/customer_list',
+    component:CustomerListComponent
   }
 ];
 
