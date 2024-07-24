@@ -1,6 +1,24 @@
 
 
 
+
+25. below package isn't installed due to dependcy upstream error. so manually added
+package name and version in package.json file after run npm install --legacy-peer-deps
+
+
+24. angular powered bootstrap widget and angular-fontawesome
+    ng add @ng-bootstrap/ng-bootstrap - ng-bootstrap.github.io/#/home
+    https://ng-bootstrap.github.io/#/getting-started
+
+    ng add @fortawesome/angular-fontawesome - https://www.npmjs.com/package/@fortawesome/angular-fontawesome
+    ng add @fortawesome/angular-fontawesome --legacy-peer-deps
+
+
+
+23. created login, not found, forgot password inside core folder
+
+July-24-2024
+
 22.) Template-driven vs Reactive Forms
     A.) Template-driven
         Template-driven forms make use of the "FormsModule",
