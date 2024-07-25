@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CustomerRootComponent } from './features/customer/customer-root/customer-root.component';
-import { CustomerRootModule } from './features/customer/customer-root/customer-root.module';
+// import { CustomerRootComponent } from './features/customer/customer-root/customer-root.component';
+// import { CustomerRootModule } from './features/customer/customer-root/customer-root.module';
 import { LoginComponent } from './core/components/login/login.component';
 import { ForgotPasswordComponent } from './core/components/forgot-password/forgot-password.component';
 import { NotFoundComponent } from './core/components/not-found/not-found.component';
@@ -17,7 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    CustomerRootComponent,
+   // CustomerRootComponent,
     LoginComponent,
     ForgotPasswordComponent,
     NotFoundComponent
@@ -25,7 +25,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CustomerRootModule,
+  //  CustomerRootModule,
     ReactiveFormsModule
     // FontAwesomeModule,
     // NgbModule

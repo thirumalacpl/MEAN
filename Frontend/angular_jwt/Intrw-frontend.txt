@@ -1,6 +1,9 @@
 
 
 
+26. create module with routing
+    ng g m modules/admin --routing
+
 
 25. below package isn't installed due to dependcy upstream error. so manually added
 package name and version in package.json file after run npm install --legacy-peer-deps
