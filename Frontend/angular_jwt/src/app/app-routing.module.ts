@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './core/components/login/login.component';
 import { ForgotPasswordComponent } from './core/components/forgot-password/forgot-password.component';
 import { NotFoundComponent } from './core/components/not-found/not-found.component';
+import { AuthGuard } from './core/components/guards/auth.guard';
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   
   {
     path: 'admin',
+    canActivate: [AuthGuard],
     loadChildren: () =>
       import('./features/modules/admin/admin.module').then((m) => m.AdminModule),
   },

@@ -1,9 +1,33 @@
 
+// completed login jwt static logout lazy routing module
+
+https://www.youtube.com/watch?v=ibn2yAomxp8&t=706s&ab_channel=TechnicalBabaji
+https://github.com/Tariqu/routing/blob/main/src/app/app-routing.module.ts
+
+
+29. after login restrict browser back button to login package
+    ngOnInit(): void {
+    if (this.auth.isLoggedIn()) { // this code won't allow browser back button to go login page after login
+      this.router.navigate(['admin']); // home page redirect
+    }
+  }
+
+28. create guard folder and auth guard
+    ng generate guard <foldername>/auth or ng g g guards/auth
+    after create service for auth using below command
+    ng g s services/auth
+
+
+27. Angular tutorial site ---good --- > https://dotnettutorials.net/lesson/angular-custom-pipes/
 
 
 26. create module with routing
     ng g m modules/admin --routing
 
+    create component inside lazy module
+    ng g c modules/admin/components/services
+
+July-25-2024
 
 25. below package isn't installed due to dependcy upstream error. so manually added
 package name and version in package.json file after run npm install --legacy-peer-deps
