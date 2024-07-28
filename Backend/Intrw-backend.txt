@@ -1,4 +1,56 @@
 
+
+
+1.MongooseError: The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.
+  - facing this issue if i directly run this file command - node app.js
+  to resolve use command we already config in package json - npm run dev
+
+
+
+  nodemon installed and configured so use below command to start the nodejs 
+run command - npm run dev
+
+
+API end point details for individual user creation, login, get is profile and update his profile after logout
+
+1. User registration API - http://localhost:5000/api/users
+    request body paramater  
+    name- thirumal , email-thirumal@gmail.com, password-12345678
+
+2. Login API - http://localhost:5000/api/users/login
+    request body paramater  
+    email : thirumal@gmail.com   pass: 12345678
+
+3. Getting last user registered profile from DB - http://localhost:5000/api/users/profile
+
+4. update profile using PUT method - http://localhost:5000/api/users/profile
+    request body paramater  
+    name: thirumalUpdate password: 123456789
+
+5. Logout - http://localhost:5000/api/users/logout
+
+
+
+// Need to create admin API end point to access all profile details
+
+6. create API to fetch All user registered profile from DB with token
+
+copied from readme
+Jul-28-2024
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 July-20-24
 
 nodemon installed and configured so use below command to start the nodejs run command ------> npm run dev
