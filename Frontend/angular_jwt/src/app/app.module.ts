@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './core/components/login/login.component';
 import { ForgotPasswordComponent } from './core/components/forgot-password/forgot-password.component';
 import { NotFoundComponent } from './core/components/not-found/not-found.component';
+import { HttpClientModule } from '@angular/common/http';
 
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -26,7 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
   //  CustomerRootModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule 
     // FontAwesomeModule,
     // NgbModule
   ],

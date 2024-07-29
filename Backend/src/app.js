@@ -4,12 +4,28 @@ import connectDB from './config/db.js';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import userRoutes from './routes/userRoute.js';
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 dotenv.config()
 connectDB();
 
 const PORT = 5000;
 const app = express() // creating one instance
+
+const whitelist = ["http://localhost:4200"];
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
+};
+
+app.use(cors(corsOptions));
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser());
