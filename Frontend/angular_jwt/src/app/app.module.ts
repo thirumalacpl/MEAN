@@ -9,6 +9,7 @@ import { LoginComponent } from './core/components/login/login.component';
 import { ForgotPasswordComponent } from './core/components/forgot-password/forgot-password.component';
 import { NotFoundComponent } from './core/components/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
 
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -32,7 +33,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     // FontAwesomeModule,
     // NgbModule
   ],
-  providers: [],
+  providers: [CookieService], // Add CookieService here
   //schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap: [AppComponent]
 })

@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { LoginService } from '../services/login.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -17,9 +18,10 @@ export class LoginComponent implements OnInit {
     email: new FormControl(''),
     password: new FormControl(''),
   });
-  constructor(private auth: AuthService, private router: Router, private loginService: LoginService) {}
+  constructor(private auth: AuthService, private router: Router, private loginService: LoginService, private cookieService: CookieService) {}
 
   ngOnInit(): void {
+   
     if (this.auth.isLoggedIn()) { // this code won't allow browser back button to go login page after login
       this.router.navigate(['admin']); 
     }
@@ -32,6 +34,7 @@ export class LoginComponent implements OnInit {
       console.log(this.loginForm.value);
       this.loginService.authLogin(this.loginForm.value).subscribe((data: any[]) => {
         console.log(data);
+        this.getCookie();
       });
       // this.auth.login(this.loginForm.value).subscribe(
       //   (result:any) => {
@@ -44,6 +47,13 @@ export class LoginComponent implements OnInit {
       // );
     }
   }
+
+  getCookie() {
+    console.log("get cookie")
+    const token = this.cookieService.get('token');
+    console.log('Token:', token);
+  }
+
   getProfile(){
     console.log("getProfile")
     this.loginService.getProfile().subscribe((data: any[]) => {

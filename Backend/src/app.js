@@ -12,7 +12,7 @@ connectDB();
 const PORT = 5000;
 const app = express() // creating one instance
 
-const whitelist = ["http://localhost:4200"];
+const whitelist = ["http://localhost:4201"];
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
