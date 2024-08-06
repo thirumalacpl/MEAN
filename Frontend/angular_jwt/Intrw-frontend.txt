@@ -1,4 +1,10 @@
 
+
+ngrx store
+https://github.com/jvlcode/angular-ngrx-basics/blob/main/src/app/app.module.ts
+https://www.youtube.com/watch?v=wq89V9mojxg&t=437s&ab_channel=JVLcode
+aug-06-2024
+
 // completed login jwt static logout lazy routing module
 
 https://www.youtube.com/watch?v=ibn2yAomxp8&t=706s&ab_channel=TechnicalBabaji
